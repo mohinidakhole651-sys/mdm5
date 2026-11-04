@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spice Garden - Food Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-amber-50 text-slate-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <div>
+        <p class="text-xs tracking-widest text-amber-400 uppercase">Spice Garden</p>
+        <h1 class="text-xl font-bold">Our Food Menu</h1>
+      </div>
+      <p class="text-sm bg-slate-800 rounded-lg px-3 py-2">Items: <span id="count">0</span> | Total: ₹<span id="total">0</span></p>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <p class="text-center text-xs tracking-widest text-amber-700 uppercase">Freshly Prepared</p>
+    <h2 class="text-center text-3xl font-extrabold">Popular Dishes</h2>
+    <p class="text-center text-slate-500 mt-2">Explore our customer favorites, prepared fresh and served with care.</p>
+
+    <!-- CSS Grid: 1 column on mobile, 2 on tablet, 3 on desktop -->
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="flex flex-col justify-between bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="aspect-video bg-orange-100 flex items-center justify-center text-6xl">🍕</div>
+        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+          <div>
+            <div class="flex items-center justify-between"><h3 class="font-bold text-lg">Garden Pizza</h3><span class="text-xs font-semibold bg-amber-100 text-amber-800 rounded-full px-2 py-1">₹299</span></div>
+            <p class="mt-2 text-sm text-slate-500">Thin-crust pizza topped with fresh vegetables, cheese and tomato sauce.</p>
+          </div>
+          <button data-price="299" class="order w-full py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 active:scale-95 transition">Add to order</button>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-between bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="aspect-video bg-rose-100 flex items-center justify-center text-6xl">🍛</div>
+        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+          <div>
+            <div class="flex items-center justify-between"><h3 class="font-bold text-lg">Paneer Butter Masala</h3><span class="text-xs font-semibold bg-amber-100 text-amber-800 rounded-full px-2 py-1">₹249</span></div>
+            <p class="mt-2 text-sm text-slate-500">Soft paneer cubes simmered in a rich, creamy tomato and butter gravy.</p>
+          </div>
+          <button data-price="249" class="order w-full py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 active:scale-95 transition">Add to order</button>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-between bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="aspect-video bg-yellow-100 flex items-center justify-center text-6xl">🍔</div>
+        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+          <div>
+            <div class="flex items-center justify-between"><h3 class="font-bold text-lg">Classic Veg Burger</h3><span class="text-xs font-semibold bg-amber-100 text-amber-800 rounded-full px-2 py-1">₹179</span></div>
+            <p class="mt-2 text-sm text-slate-500">A crispy vegetable patty with lettuce, tomato, cheese and house sauce.</p>
+          </div>
+          <button data-price="179" class="order w-full py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 active:scale-95 transition">Add to order</button>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-between bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="aspect-video bg-red-100 flex items-center justify-center text-6xl">🍜</div>
+        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+          <div>
+            <div class="flex items-center justify-between"><h3 class="font-bold text-lg">Hakka Noodles</h3><span class="text-xs font-semibold bg-amber-100 text-amber-800 rounded-full px-2 py-1">₹199</span></div>
+            <p class="mt-2 text-sm text-slate-500">Stir-fried noodles tossed with crunchy vegetables and savory seasoning.</p>
+          </div>
+          <button data-price="199" class="order w-full py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 active:scale-95 transition">Add to order</button>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-between bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="aspect-video bg-green-100 flex items-center justify-center text-6xl">🍚</div>
+        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+          <div>
+            <div class="flex items-center justify-between"><h3 class="font-bold text-lg">Veg Biryani</h3><span class="text-xs font-semibold bg-amber-100 text-amber-800 rounded-full px-2 py-1">₹229</span></div>
+            <p class="mt-2 text-sm text-slate-500">Fragrant basmati rice cooked with vegetables, spices and fresh herbs.</p>
+          </div>
+          <button data-price="229" class="order w-full py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 active:scale-95 transition">Add to order</button>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-between bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="aspect-video bg-pink-100 flex items-center justify-center text-6xl">🍨</div>
+        <div class="p-5 flex flex-col flex-1 justify-between gap-4">
+          <div>
+            <div class="flex items-center justify-between"><h3 class="font-bold text-lg">Chocolate Sundae</h3><span class="text-xs font-semibold bg-amber-100 text-amber-800 rounded-full px-2 py-1">₹149</span></div>
+            <p class="mt-2 text-sm text-slate-500">Vanilla ice cream topped with chocolate sauce and crunchy toppings.</p>
+          </div>
+          <button data-price="149" class="order w-full py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 active:scale-95 transition">Add to order</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 text-sm text-center py-6">
+    &copy; 2026 Spice Garden. Fresh food, made with care.
+  </footer>
+
+  <script>
+    let count = 0, total = 0;
+    document.querySelectorAll('.order').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        count++; total += Number(btn.dataset.price);
+        document.getElementById('count').textContent = count;
+        document.getElementById('total').textContent = total;
+      });
+    });
+  </script>
+</body>
+</html>
